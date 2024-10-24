@@ -11,7 +11,6 @@
   padding: 2rem; /* Add padding for spacing */
   overflow: hidden; /* Prevent overflow */
   border-radius: 10px; /* Rounded corners */
-  /* background: linear-gradient(135deg, #FFB8B6, #75C7E4); Gradient background using the palette */
 }
 
 /* Overlay for better readability */
@@ -42,94 +41,94 @@
 
 /* Heading Styles */
 .header-heading {
-  font-size: 2.5rem; /* Large heading */
+  font-size: clamp(2rem, 5vw, 3rem); /* Responsive heading size */
   margin-bottom: 0.5rem; /* Space below heading */
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Softer shadow for depth */
   line-height: 1.2; /* Better line height */
-  color: #ffffff; /* Palette color for heading */
+  color: #ffffff;
 }
 
 /* Paragraph Styles */
 .head-para {
-  font-size: 1.2rem; /* Standard paragraph size */
+  font-size: clamp(1rem, 2.5vw, 1.5rem); /* Responsive paragraph size */
   margin-bottom: 1.5rem; /* Space below paragraph */
   line-height: 1.6; /* Better line spacing */
-  text-align: left; /* Align text to the left */
+  text-align: left;
   opacity: 0.9; /* Slight transparency for a soft feel */
-  color: #f6f6f6; /* Palette color for paragraph text */
+  color: #f6f6f6;
 }
 
 /* Button Styles */
 .header-btn {
   padding: 0.8rem 1rem; /* Button padding */
   border: none; /* No border */
-  background-color: #5AB4A6; /* Button color from the palette */
+  background-color: #5AB4A6; /* Button color */
   color: #ffffff; /* White text */
-  font-size: 1rem; /* Standard font size */
-  font-weight: bold; /* Bold text */
-  border-radius: 30px; /* Rounded corners for a modern look */
-  cursor: pointer; /* Pointer on hover */
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Softer shadow for depth */
 }
 
 .header-btn:hover {
-  background-color: #68e0ce; /* Hover color from the palette */
+  background-color: #68e0ce; /* Hover color */
   transform: scale(1.05); /* Slightly scale up on hover */
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-.header {
-  padding: 1.5rem; /* Adjust padding for smaller screens */
-}
+  .header {
+    padding: 1.5rem; /* Adjust padding for smaller screens */
+  }
 
-.header-contents {
-  max-width: 90%; /* Wider max width on smaller screens */
-  left: 5%; /* Adjust left position */
-  bottom: 15%; /* Move up slightly from the bottom */
-}
+  .header-contents {
+    max-width: 90%; /* Wider max width on smaller screens */
+    left: 5%; /* Adjust left position */
+    bottom: 15%; /* Move up slightly from the bottom */
+  }
 
-h2 {
-  font-size: 2rem; /* Reduce font size on smaller screens */
-}
+  .header-heading {
+    font-size: clamp(1.5rem, 5vw, 2rem); /* Reduce heading size on smaller screens */
+  }
 
-p {
-  font-size: 1rem; /* Adjust paragraph size */
-}
+  .head-para {
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem); /* Adjust paragraph size */
+  }
 
-.header-btn {
-  padding: 0.6rem 1.5rem; /* Adjust button padding */
-}
+  .header-btn {
+    padding: 0.6rem 1.5rem; /* Adjust button padding */
+  }
 }
 
 @media (max-width: 480px) {
-h2 {
-  font-size: 1.5rem; /* Further reduce font size */
-}
+  .header-heading {
+    font-size: clamp(1rem, 4vw, 1.5rem); /* Further reduce heading size */
+  }
 
-p {
-  font-size: 0.9rem; /* Further adjust paragraph size */
-}
+  .head-para {
+    font-size: clamp(0.8rem, 2vw, 1rem); /* Further adjust paragraph size */
+  }
 
-.header-btn {
-  padding: 0.5rem 1rem; /* Further adjust button padding */
-}
+  .header-btn {
+    padding: 0.5rem 1rem; /* Further adjust button padding */
+  }
 
-.header-contents {
-  left: 3%; /* Adjust position further for mobile */
-  bottom: 10%; /* Move up slightly from the bottom */
-}
+  .header-contents {
+    left: 3%; /* Adjust position further for mobile */
+    bottom: 10%; /* Move up slightly from the bottom */
+  }
 }
 
 /* Animation for fade-in effect */
 @keyframes fadeIn {
-from {
-  opacity: 0;
-  transform: translateY(20px); /* Slide in from below */
-}
-to {
-  opacity: 1;
-  transform: translateY(0); /* End position */
-}
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Slide in from below */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* End position */
+  }
 }
