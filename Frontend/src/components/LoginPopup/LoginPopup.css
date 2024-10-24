@@ -1,0 +1,166 @@
+/* General styling for popup */
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+.login-popup {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(64, 49, 49, 0.049); /* Keeping the background transparent */
+    display: grid;
+    place-items: center;
+}
+
+/* Container styling */
+.login-popup-container {
+    place-self: center;
+    width: max(23vw, 330px);
+    color: #4a4a4a;
+    background: linear-gradient(90deg, #FFB8B6, #75C7E4);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s;
+    transition: all 0.3s ease-in-out;
+}
+
+.login-popup-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.login-popup-title img {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+/* Input fields styling */
+.login-popup-input input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #75C7E4; /* Light blue border for inputs */
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.login-popup-input input:focus {
+    border-color: #CAD6EC; /* Softer blue on focus */
+    outline: none;
+    box-shadow: 0px 4px 8px rgba(202, 214, 236, 0.5); /* Subtle shadow with theme color */
+}
+
+/* Button styling */
+.login-btn {
+    width: 100%;
+    background-color: #5AB4A6; /* Teal button */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.login-btn:hover {
+    background-color: #75C7E4; /* Light blue on hover */
+}
+
+/* Checkbox and conditions */
+.login-popup-condition {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: #333;
+}
+
+.login-popup-condition input {
+    margin-right: 10px;
+    cursor: pointer;
+}
+.login-popup-condition input:checked {
+    color: white;
+    background-color: #5AB4A6; /* Change background when checked */
+    border-color: #5AB4A6;
+    accent-color: #5AB4A6; /* Apply teal color when checked */
+}
+
+
+/* Links and transitions */
+.login-popup p {
+    font-size: 13px;
+    color: #333;
+    text-align: center;
+}
+
+.login-popup span {
+    color: #5AB4A6; /* Teal for links */
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.login-popup span:hover {
+    text-decoration: underline;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-popup-container {
+        width: 80%;
+        padding: 20px;
+    }
+
+    .login-popup-input input {
+        padding: 10px;
+    }
+
+    .login-btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-popup-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .login-popup-title {
+        font-size: 18px;
+    }
+
+    .login-popup-input input {
+        padding: 8px;
+    }
+
+    .login-btn {
+        font-size: 14px;
+    }
+}

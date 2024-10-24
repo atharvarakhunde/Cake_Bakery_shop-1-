@@ -1,0 +1,74 @@
+/* Navbar.css */
+
+/* Basic Navbar Styles */
+.navbar {
+    /* position: fixed; */
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 4%;
+    background: linear-gradient(90deg, #FFB6C1, #B0E0E6);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Smooth shadow for depth */
+    /* position: sticky; Makes the navbar stick to the top on scroll */
+    top: 0;
+    z-index: 1000; /* Ensures the navbar stays above other elements */
+  }
+  
+  /* Logo Style */
+  .logo {
+    width: 120px; /* Logo width */
+    height: auto;
+    cursor: pointer;
+    border-radius: 11px;
+    transition: transform 0.3s ease; /* Smooth transition when hovered */
+  }
+  
+  .logo:hover {
+    transform: scale(1.1); /* Slightly enlarge the logo on hover */
+  }
+  
+  /* Profile Image Style */
+  .profile {
+    width: 40px; /* Profile image size */
+    height: 40px;
+    border-radius: 50%; /* Circular profile image */
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .profile:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+    transform: scale(1.1); /* Enlarge on hover */
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 8px 3%; /* Adjust padding for smaller screens */
+    }
+  
+    .logo {
+      width: 100px; /* Slightly smaller logo on smaller screens */
+    }
+  
+    .profile {
+      width: 35px; /* Slightly smaller profile image */
+      height: 35px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .navbar {
+      padding: 10px 2%; /* Even smaller padding for mobile devices */
+    }
+  
+    .logo {
+      width: 90px; /* Further reduction in logo size for mobile */
+    }
+  
+    .profile {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  

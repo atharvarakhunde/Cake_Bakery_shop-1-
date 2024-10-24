@@ -1,0 +1,135 @@
+/* Header Styles */
+.header {
+  position: relative;
+  height: 100vh; /* Full viewport height */
+  background: url('/public/header_img.png') no-repeat center center; /* Center the background image */
+  background-size: cover; /* Cover the entire area */
+  display: flex;
+  justify-content: flex-start; /* Align items to the left */
+  align-items: flex-end; /* Align items to the bottom */
+  color: #ffffff; /* White text color */
+  padding: 2rem; /* Add padding for spacing */
+  overflow: hidden; /* Prevent overflow */
+  border-radius: 10px; /* Rounded corners */
+  /* background: linear-gradient(135deg, #FFB8B6, #75C7E4); Gradient background using the palette */
+}
+
+/* Overlay for better readability */
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Darker overlay for better text readability */
+  z-index: 1;
+}
+
+/* Header Contents */
+.header-contents {
+  position: absolute; /* Positioning to allow layering with the overlay */
+  display: flex; /* Flexbox for layout */
+  flex-direction: column; /* Stack items vertically */
+  align-items: flex-start; /* Align items to the start (left) */
+  gap: 1.5rem; /* Space between items */
+  max-width: 600px; /* Max width to prevent text stretching */
+  animation: fadeIn 2s; /* Fade-in animation */
+  bottom: 10%; /* Position from the bottom */
+  left: 6%; /* Position from the left */
+  z-index: 2; /* Ensure contents are above the overlay */
+}
+
+/* Heading Styles */
+.header-heading {
+  font-size: 2.5rem; /* Large heading */
+  margin-bottom: 0.5rem; /* Space below heading */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Softer shadow for depth */
+  line-height: 1.2; /* Better line height */
+  color: #ffffff; /* Palette color for heading */
+}
+
+/* Paragraph Styles */
+.head-para {
+  font-size: 1.2rem; /* Standard paragraph size */
+  margin-bottom: 1.5rem; /* Space below paragraph */
+  line-height: 1.6; /* Better line spacing */
+  text-align: left; /* Align text to the left */
+  opacity: 0.9; /* Slight transparency for a soft feel */
+  color: #f6f6f6; /* Palette color for paragraph text */
+}
+
+/* Button Styles */
+.header-btn {
+  padding: 0.8rem 1rem; /* Button padding */
+  border: none; /* No border */
+  background-color: #5AB4A6; /* Button color from the palette */
+  color: #ffffff; /* White text */
+  font-size: 1rem; /* Standard font size */
+  font-weight: bold; /* Bold text */
+  border-radius: 30px; /* Rounded corners for a modern look */
+  cursor: pointer; /* Pointer on hover */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Softer shadow for depth */
+}
+
+.header-btn:hover {
+  background-color: #68e0ce; /* Hover color from the palette */
+  transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+.header {
+  padding: 1.5rem; /* Adjust padding for smaller screens */
+}
+
+.header-contents {
+  max-width: 90%; /* Wider max width on smaller screens */
+  left: 5%; /* Adjust left position */
+  bottom: 15%; /* Move up slightly from the bottom */
+}
+
+h2 {
+  font-size: 2rem; /* Reduce font size on smaller screens */
+}
+
+p {
+  font-size: 1rem; /* Adjust paragraph size */
+}
+
+.header-btn {
+  padding: 0.6rem 1.5rem; /* Adjust button padding */
+}
+}
+
+@media (max-width: 480px) {
+h2 {
+  font-size: 1.5rem; /* Further reduce font size */
+}
+
+p {
+  font-size: 0.9rem; /* Further adjust paragraph size */
+}
+
+.header-btn {
+  padding: 0.5rem 1rem; /* Further adjust button padding */
+}
+
+.header-contents {
+  left: 3%; /* Adjust position further for mobile */
+  bottom: 10%; /* Move up slightly from the bottom */
+}
+}
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+from {
+  opacity: 0;
+  transform: translateY(20px); /* Slide in from below */
+}
+to {
+  opacity: 1;
+  transform: translateY(0); /* End position */
+}
+}

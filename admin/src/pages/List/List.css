@@ -1,0 +1,107 @@
+/* Main container for the list table */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+.list {
+    font-family: Poppins;
+    min-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Title of the list */
+.list-main-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+/* Flex-based layout for rows */
+.list-table-format, .list-table-format.titles {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1.5fr 1fr 0.5fr; /* Consistent column sizes for both title and rows */
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #fff;
+    font-size: 14px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Light shadow for rows */
+    transition: box-shadow 0.3s ease;
+}
+
+/* Titles row styling */
+.list-table-format.titles {
+    background-color: #f0f0f0;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 15px;
+    border-bottom: 2px solid #d0d0d0;
+}
+
+/* Image styling */
+.list-table-format img {
+    width: 80px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #cacaca; /* Optional: Add border for better definition */
+}
+
+/* Flex children for each column */
+.list-table-format p, 
+.list-table-format b {
+    text-align: center;
+    /* font-family: 'Roboto', sans-serif; */
+    color: #333;
+}
+
+/* Special width for the action button */
+.list-table-format p:last-child, 
+.list-table-format.titles b:last-child {
+    cursor: pointer;
+
+}
+
+
+
+/* Hover effect for rows */
+.list-table-format:hover {
+    background-color: #f4f4f4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slightly darker shadow on hover */
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .list-table-format, .list-table-format.titles {
+        grid-template-columns: 1fr; /* Stack columns vertically */
+        text-align: center;
+    }
+
+    .list-table-format img {
+        margin-bottom: 10px; /* Space below image in stacked layout */
+    }
+
+    .list-table-format p {
+        margin-bottom: 10px; /* Space below text in stacked layout */
+    }
+}
+
+/* Mobile-friendly adjustments */
+@media (max-width: 500px) {
+    .list-table-format {
+        font-size: 12px; /* Smaller font for mobile */
+        padding: 10px; /* Less padding for mobile */
+    }
+
+    .list-table-format img {
+        width: 40px; /* Smaller image on mobile */
+        height: 40px;
+    }
+}

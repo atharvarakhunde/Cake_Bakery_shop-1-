@@ -1,0 +1,130 @@
+/* Sidebar Container */
+.sidebar {
+    width: 18%; /* Default sidebar width for large screens */
+    min-height: 100vh;
+    background-color: #f4f4f9; /* Soft background */
+    border-right: 1px solid #e0e0e0; /* Subtle border */
+    padding: 20px 10px; /* Inner spacing */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1); /* Depth with shadow */
+    transition: width 0.3s ease; /* Smooth transition for width changes */
+}
+
+/* Sidebar Options Container */
+.sildebar-options {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between options */
+    padding-top: 50px;
+}
+
+/* Sidebar Option Styling */
+.sidebar-option {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between icon and text */
+    padding: 10px 15px; /* Inner padding for each option */
+    background-color: #ffffff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover and transform effects */
+    cursor: pointer;
+}
+
+/* Hover Effect for Sidebar Option */
+.sidebar-option:hover {
+    background-color: #eaeaea; /* Lighter grey on hover */
+    transform: translateX(5px); /* Slight shift for interactivity */
+}
+
+/* Sidebar Option Icon */
+.sidebar-option img {
+    width: 24px; /* Icon size */
+    height: 24px;
+    object-fit: contain;
+}
+
+/* Sidebar Option Text */
+.sidebar-option p {
+    font-size: 1rem; /* Standard font size */
+    color: #333; /* Darker text color */
+    margin: 0; /* No margin for clean layout */
+}
+
+/* Responsive Design */
+
+/* Larger Tablets & Small Laptops (1024px and below) */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 22%; /* Slightly wider sidebar for medium devices */
+    }
+}
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 30%; /* Increase sidebar width for smaller devices */
+    }
+    .sidebar-option {
+        padding: 8px 12px; /* Reduce padding for tablets */
+        gap: 10px; /* Reduce gap between icon and text */
+    }
+}
+
+/* Small Tablets & Large Phones (600px and below) */
+@media (max-width: 600px) {
+    .sidebar {
+        width: 35%; /* Expand sidebar for smaller devices */
+        padding: 10px 8px; /* Adjust padding */
+    }
+    .sidebar-option {
+        padding: 8px 10px; /* Reduce padding */
+        gap: 8px; /* Closer icon and text */
+        font-size: 0.95rem; /* Slightly reduce font size */
+    }
+}
+
+/* Phones (480px and below) */
+@media (max-width: 480px) {
+    .sidebar {
+        width: 40%; /* Full-width sidebar for mobile devices */
+        padding: 10px 5px; /* Adjust padding */
+    }
+    .sidebar-option {
+        padding: 6px 8px; /* Tighter padding for mobile */
+        gap: 8px; /* Smaller gap between icon and text */
+        font-size: 0.9rem; /* Adjust font size for mobile */
+    }
+    .sidebar-option img {
+        width: 20px; /* Smaller icon size for mobile */
+        height: 20px;
+    }
+}
+
+/* Extra Small Devices (320px and below) */
+@media (max-width: 320px) {
+    .sidebar {
+        width: 50%; /* Almost full width for very small devices */
+    }
+    .sidebar-option p {
+        font-size: 0.85rem; /* Smallest font size */
+    }
+}
+
+
+/* Active Sidebar Option Styling */
+.sidebar-option.active  {
+    background-color: #2496b5; /* Green background when active */
+    color: #fff; /* White text when active */
+    font-weight: bold; /* Bold text */
+
+}
+.sidebar-option.active p {  
+    color: white;
+}
+
+/* Adjusting icon color when active */
+.sidebar-option.active img {
+    filter: brightness(0) invert(1); /* Invert the icon color */
+}

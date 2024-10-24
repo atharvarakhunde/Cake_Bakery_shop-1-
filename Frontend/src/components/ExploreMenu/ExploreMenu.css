@@ -1,0 +1,92 @@
+/* Explore Menu Styles */
+.explore-menu {
+    padding: 4rem 2rem; /* Padding for spacing */
+    text-align: center; /* Center align text */
+    background-color: #CAD6EC; /* Light background from the palette */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: auto; /* Center the container */
+}
+
+.explore-menu h1 {
+    font-size: 2.5rem; /* Heading size */
+    margin-bottom: 1rem; /* Space below heading */
+    color: #3e3737; /* Dark text color */
+}
+
+.explore-menu-text {
+    font-size: 1.2rem; /* Paragraph size */
+    margin-bottom: 2rem; /* Space below paragraph */
+    line-height: 1.5; /* Better line spacing */
+    color: #555; /* Medium gray text color */
+}
+
+.explore-menu-list {
+    display: grid; /* Use grid for layout */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 2rem; /* Space between items */
+}
+
+.explore-menu-list-item {
+    background-color: #f8f8f8; /* Blueish background from the palette */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 1rem; /* Padding for content */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.explore-menu-list-item img {
+    width: 100%; /* Responsive image */
+    border-radius: 10px; /* Rounded corners for image */
+    margin-bottom: 1rem; /* Space below image */
+}
+
+.explore-menu-list-item p {
+    font-size: 1rem; /* Item name size */
+    color: #333; /* Dark text color */
+    text-align: center; /* Center align text */
+}
+
+/* Hover effect for menu items */
+.explore-menu-list-item:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    /* background-color: #c0d9e2; Soft pink background on hover from palette */
+}
+
+/* Active Menu Item Styles */
+.explore-menu-list-item .active {
+    border: 2px solid #dfdddd; /* Greenish accent for active border */
+    box-shadow: 0 4px 20px rgba(189, 239, 232, 0.4); /* Enhanced shadow for active item */
+    transform: scale(1.05); /* Slightly increase size for emphasis */
+    z-index: 1; /* Bring active item to the front */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .explore-menu h1 {
+        font-size: 2rem; /* Smaller heading size */
+    }
+
+    .explore-menu-text {
+        font-size: 1rem; /* Smaller paragraph size */
+    }
+
+    .explore-menu-list-item {
+        padding: 0.8rem; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .explore-menu h1 {
+        font-size: 1.5rem; /* Further reduce heading size */
+    }
+
+    .explore-menu-text {
+        font-size: 0.9rem; /* Further adjust paragraph size */
+    }
+
+    .explore-menu-list-item {
+        padding: 0.5rem; /* Further adjust padding for smaller screens */
+    }
+}

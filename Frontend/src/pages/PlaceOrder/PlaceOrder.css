@@ -1,0 +1,141 @@
+/* Global styles */
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.place-order {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 50px;
+    padding: 20px;
+    /* background-color: #CAD6EC;   Light blue background */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+
+.place-order-left, 
+.place-order-right {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.place-order-left {
+    flex: 1;
+    min-width: 280px;
+    max-width: 480px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.place-order-left .title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #333;
+    border-bottom: 2px solid #5AB4A6 ; /* Use light blue for the bottom border */
+    padding-bottom: 10px;
+}
+
+.place-order-left input {
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    outline: none;
+    background-color: #fafafa;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.place-order-left input:focus {
+    border-color: #75C7E4; /* Use #75C7E4 for focus border color */
+    background-color: #fff;
+}
+
+.place-order-left .multi-fields {
+    display: flex;
+    gap: 12px;
+}
+
+.place-order-right {
+    flex: 1;
+    min-width: 280px;
+    margin-right: 50px;
+    max-width: 480px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    background-color: #fedfdd; /* Light pink background for right section */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Cart total button */
+.cart-total button {
+    margin-top: 30px;
+    width: 100%;
+    padding: 15px;
+    background-color: #5AB4A6; /* Teal color for button */
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cart-total button:hover {
+    background-color: #4A8D84; /* Darker teal on hover */
+    transform: translateY(-2px);
+}
+
+/* Responsive styles for medium devices */
+@media (max-width: 768px) {
+    .place-order {
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .place-order-left,
+    .place-order-right {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .place-order-left .title {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .cart-total button {
+        font-size: 1rem;
+        padding: 12px;
+    }
+}
+
+/* Responsive styles for small devices */
+@media (max-width: 480px) {
+    .place-order-left .title {
+        font-size: 1.6rem;
+    }
+
+    .place-order-left input {
+        padding: 10px;
+    }
+
+    .cart-total button {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}

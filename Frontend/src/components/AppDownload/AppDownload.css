@@ -1,0 +1,99 @@
+/* Main container for the app download section */
+.app-download {
+    margin: 0 auto;
+    margin-top: 5vh; /* Adjusted for viewport height for better spacing */
+    font-size: clamp(16px, 3vw, 28px); /* Responsive font size between 16px to 28px */
+    text-align: center;
+    font-weight: 600; /* Slightly bolder text for readability */
+    color: #333; /* Softer color for better readability */
+    /* background-color: #CAD6EC; Light background color for the main container */
+    padding: 20px; /* Add padding for better spacing */
+    border-radius: 15px; /* Rounded corners for a softer look */
+}
+
+/* Platform container to hold download buttons or images */
+.app-download-platform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(10px, 4vw, 50px); /* Responsive gap between elements */
+    margin-top: 3vh; /* Dynamic margin */
+    flex-wrap: wrap; /* Flex-wrap to ensure elements don't overflow on smaller screens */
+}
+
+/* Platform images (e.g., Play Store, App Store) */
+.app-download-platform img {
+    width: clamp(100px, 30vw, 180px); /* Width adjusts between 100px and 180px, based on screen size */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Smoother transitions for scaling and shadow effects */
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for a floating effect */
+    border-radius: 10px; /* Rounded corners for modern look */
+}
+
+/* Hover effect for platform images */
+.app-download-platform img:hover {
+    transform: scale(1.08); /* Enlarges slightly on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Enhances shadow on hover */
+}
+
+/* Additional styling for buttons or links */
+.app-download-platform a {
+    text-decoration: none; /* Remove underline from links */
+    color: #5AB4A6; /* Main action color */
+    background-color: #FFB8B6; /* Soft background color for buttons */
+    padding: 10px 20px; /* Padding for buttons */
+    border-radius: 10px; /* Rounded corners for buttons */
+    transition: background-color 0.3s ease; /* Transition for background color */
+}
+
+/* Hover effect for buttons */
+.app-download-platform a:hover {
+    background-color: #75C7E4; /* Change background color on hover */
+}
+
+/* Responsive behavior for different screen sizes */
+@media (max-width: 1200px) {
+    .app-download {
+        font-size: clamp(18px, 2.5vw, 24px); /* Smaller font size for medium devices */
+    }
+    .app-download-platform img {
+        width: clamp(100px, 25vw, 160px); /* Adjusts image size for medium screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .app-download {
+        font-size: clamp(16px, 3vw, 22px); /* Responsive font size for tablets */
+        margin-top: 5vh; /* Adjust margin for better spacing on tablets */
+    }
+    .app-download-platform {
+        gap: clamp(15px, 3vw, 40px); /* Adjust gap for better alignment on smaller screens */
+    }
+    .app-download-platform img {
+        width: clamp(100px, 30vw, 140px); /* Adjust image size for smaller devices */
+    }
+}
+
+@media (max-width: 768px) {
+    .app-download {
+        font-size: 18px; /* Fixed font size for mobile devices */
+        margin-top: 6vh; /* Increase margin slightly for mobile devices */
+    }
+    .app-download-platform {
+        flex-direction: column; /* Stack images vertically for small screens */
+        gap: 20px; /* Add some gap between vertically stacked images */
+    }
+    .app-download-platform img {
+        width: 120px; /* Fixed image size for mobile */
+    }
+}
+
+@media (max-width: 576px) {
+    .app-download {
+        font-size: 16px; /* Even smaller font size for very small screens */
+        margin-top: 8vh; /* Increase top margin for more space */
+    }
+    .app-download-platform img {
+        width: 100px; /* Reduce image size for very small screens */
+    }
+}
