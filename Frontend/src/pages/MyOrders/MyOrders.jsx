@@ -16,7 +16,8 @@ const MyOrders = () => {
         setError(null); // Reset error state before fetching
         try {
             const response = await axios.post(url + '/api/order/userorders', {}, { headers: { token } });
-            setData(response.data.data);
+            // Reverse the data array here
+            setData(response.data.data.reverse());
             console.log(response.data.data);
         } catch (err) {
             console.error('Error fetching orders:', err);
@@ -57,7 +58,7 @@ const MyOrders = () => {
                             <p>Items: {order.items.length}</p>
                             <p>{order.orderDate ? new Date(order.orderDate).toLocaleDateString() : "Date not available"}</p>
                             <p><span>&#x25cf;</span> <b>{order.status}</b></p>
-                            <button onClick={fetchOrders} >Track order</button>
+                            <button onClick={fetchOrders}>Track order</button>
                         </div>
                     ))}
                 </div>
