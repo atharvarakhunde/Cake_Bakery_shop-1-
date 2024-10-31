@@ -60,6 +60,7 @@
     };
 
     const verifyOrder = async (req,res) =>{
+        console.log("currently in verifyOrder function");
         const {orderId,success} = req.body;
         try {
             if (success=="true") {
