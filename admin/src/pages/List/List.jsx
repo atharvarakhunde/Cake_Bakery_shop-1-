@@ -1,13 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react'
-import "./List.css"
+import "./list.css"
 import axios from "axios"
-import {toast} from "react-toastify"
+import { toast } from "react-toastify"
 
 const List = () => {
-
   const url = "https://cake-bakery-shop-1-backend.onrender.com"
-
   const [list, setList] = useState([]);
 
   // Fetch list of food items
@@ -15,7 +13,8 @@ const List = () => {
     try {
       const response = await axios.get(`${url}/api/food/list`);
       if (response.data.success) {
-        setList(response.data.data);
+        // Reverse the list array here
+        setList(response.data.data.reverse());
       } else {
         toast.error("Error fetching food list");
       }
@@ -24,16 +23,16 @@ const List = () => {
       toast.error("Error connecting to server");
     }
   }
-  const removeFood = async(foodId)=>{
-    const response = await axios.post(`${url}/api/food/remove`,{id:foodId})
-    await fetchList();
-    if(response.data.success){
-      toast.success(response.data.message)
-    }else{
-      toast.error("Error")
+
+  const removeFood = async (foodId) => {
+    const response = await axios.post(`${url}/api/food/remove`, { id: foodId });
+    if (response.data.success) {
+      toast.success(response.data.message);
+      await fetchList();
+    } else {
+      toast.error("Error");
     }
   }
-
 
   // useEffect to call fetchList on component mount
   useEffect(() => {
@@ -51,20 +50,16 @@ const List = () => {
           <b>Price</b>
           <b>Action</b>
         </div>
-        {list.map((item,index)=>{
-          return(
-            <div key={index} className='list-table-format'>
-              <img src={`${url}/images/`+ item.image} alt="" />
-              <p>{item.name}</p>
-              <p>{item.category}</p>
-              <p>₹{item.price}</p>
-              <p onClick={()=>removeFood(item._id)} className='cursor'>X</p>
-
-            </div>
-          )
-        })}
+        {list.map((item, index) => (
+          <div key={index} className='list-table-format'>
+            <img src={`${url}/images/` + item.image} alt="" />
+            <p>{item.name}</p>
+            <p>{item.category}</p>
+            <p>₹{item.price}</p>
+            <p onClick={() => removeFood(item._id)} className='cursor'>X</p>
+          </div>
+        ))}
       </div>
-
     </div>
   )
 }
