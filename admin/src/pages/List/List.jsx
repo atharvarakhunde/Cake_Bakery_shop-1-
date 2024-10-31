@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react'
-import "./list.css"
+import "./List.css"
 import axios from "axios"
 import { toast } from "react-toastify"
 
