@@ -7,6 +7,7 @@ import axios from 'axios'
 
 const Verify = () => {
     const [searchParams,setSearchParams] = useSearchParams();
+    console.log("hii");
     const success = searchParams.get("success");
     const orderId = searchParams.get("orderId");
     console.log(success,orderId);
