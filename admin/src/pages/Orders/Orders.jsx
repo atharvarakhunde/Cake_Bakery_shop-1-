@@ -7,7 +7,7 @@ import { toast } from "react-toastify"
 import { assets } from '../../assets/admin_assets/assets'
 
 const Orders = () => {
-  const url = "https://cake-bakery-shop-1-backend.onrender.com";
+  const url = "http://localhost:4000";
 
   const [orders, setOrders] = useState([]);
 
@@ -15,7 +15,8 @@ const Orders = () => {
     try {
       const response = await axios.get(`${url}/api/order/list`);
       if (response.data.success) {
-        setOrders(response.data.data);
+        // Reverse the order array to display in reverse order
+        setOrders(response.data.data.reverse());
         console.log(response.data.data);
       } else {
         toast.error("Failed to fetch orders");
@@ -24,16 +25,24 @@ const Orders = () => {
       toast.error("Error fetching data");
       console.error(error);
     }
-  }
-  const statusHandler = async (event,orderId)=>{
-    const response = await axios.post(url+"/api/order/status",{
-      orderId,
-      status:event.target.value
-    })
-    if (response.data.success) {
-      await fetchAllOrders();
+  };
+
+  const statusHandler = async (event, orderId) => {
+    try {
+      const response = await axios.post(`${url}/api/order/status`, {
+        orderId,
+        status: event.target.value
+      });
+      if (response.data.success) {
+        await fetchAllOrders();
+      } else {
+        toast.error("Failed to update status");
+      }
+    } catch (error) {
+      toast.error("Error updating status");
+      console.error(error);
     }
-  }
+  };
 
   useEffect(() => {
     fetchAllOrders();
@@ -48,7 +57,6 @@ const Orders = () => {
             <div key={index} className='order-items'>
               <img src={assets.parcel_icon} alt="Parcel Icon" />
               <div>
-                {/* Displaying the order date */}
                 <p>{order.orderDate ? new Date(order.orderDate).toLocaleDateString() : "Date not available"}</p>
                 <p className="order-item-food">
                   {order.items.map((item, idx) => (
@@ -70,7 +78,7 @@ const Orders = () => {
               </div>
               <p>Items: {order.items.length}</p>
               <p>${order.amount}</p>
-              <select onChange={(event)=>statusHandler(event,order._id)} value={order.status} >
+              <select onChange={(event) => statusHandler(event, order._id)} value={order.status} >
                 <option className='status-info' value="Food Processing">Food Processing</option>
                 <option className='status-info' value="Out for delivery">Out for delivery</option>
                 <option className='status-info' value="Delivered">Delivered</option>
