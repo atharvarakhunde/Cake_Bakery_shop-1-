@@ -6,7 +6,7 @@ import {toast} from "react-toastify"
 
 const List = () => {
 
-  const url = "http://localhost:4000"
+  const url = "https://cake-bakery-shop-1-backend.onrender.com"
 
   const [list, setList] = useState([]);
 
