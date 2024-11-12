@@ -8,7 +8,7 @@ const AppDownload = () => {
         <p className='better-expr'>for better Experience <br /> Fresh Bake</p>
         <div className="app-download-platform">
             {/* <img src={assets.play_store} alt="" /> */}
-            <a href="Frontend\src\assets\FreshBake.apk" download>
+            <a href="https://drive.google.com/file/d/1erp5aKhl-uIp7QiDY80uLDSWPT0OkBnd/view?usp=drive_link" download>
               
             <img  src={assets.app_store}  alt="" />
           
