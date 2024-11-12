@@ -23,7 +23,7 @@
 
 /* Platform images (e.g., Play Store, App Store) */
 .app-download-platform img {
-    width: clamp(100px, 30vw, 180px); /* Width adjusts between 100px and 180px, based on screen size */
+    width: clamp(100px, 30vw, 300px); /* Width adjusts between 100px and 180px, based on screen size */
     transition: transform 0.4s ease, box-shadow 0.4s ease; /* Smoother transitions for scaling and shadow effects */
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for a floating effect */
@@ -40,7 +40,7 @@
 .app-download-platform a {
     text-decoration: none; /* Remove underline from links */
     color: #5AB4A6; /* Main action color */
-    background-color: #FFB8B6; /* Soft background color for buttons */
+    background-color: #ffffff; /* Soft background color for buttons */
     padding: 10px 20px; /* Padding for buttons */
     border-radius: 10px; /* Rounded corners for buttons */
     transition: background-color 0.3s ease; /* Transition for background color */
@@ -48,7 +48,7 @@
 
 /* Hover effect for buttons */
 .app-download-platform a:hover {
-    background-color: #75C7E4; /* Change background color on hover */
+    background-color: #ffffff; /* Change background color on hover */
 }
 
 /* Responsive behavior for different screen sizes */
